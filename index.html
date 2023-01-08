@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="yourTitle"></h1>
+  
+    <!-- <script>
+        const data = {title: "some title from js"};
+
+        
+        for (const key in data) {
+            let item = data[key];
+            let h1 = document.getElementById("yourTitle");
+            h1.append(item)
+        }
+
+        
+    </script> -->
+    
+    <script>
+        
+        const data = {
+	        titles: [
+            "some first title from js", 
+            "some second title", 
+            "one more",
+            ]
+        }
+
+        
+        for (const key in data) {
+            
+           let h1 = document.getElementById("yourTitle");
+           let text = data[key];
+ 
+
+           text.forEach(function(item, i) {
+                setInterval(function() {
+                    if(i === 0){
+                        setTimeout(function(){
+                            h1.append(' ',item);     
+                        },0)                                               
+                    }
+                    if(i === 1){                        
+                       setTimeout(function(){                          
+                            h1.append(' ',item);                 
+                        },1000) 
+                    }if(i === 2){
+                        setTimeout(function(){
+                            h1.append(' ',item);              
+                        },2000)
+                        setTimeout(function(){
+                            document.location.reload();             
+                        },3000)
+                    }                
+                }, 4000);
+            })                                     
+        }
+        
+    </script>
+</body>
+</html>
+
