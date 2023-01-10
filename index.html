@@ -33,35 +33,24 @@
             ]
         }
 
+        let h1 = document.getElementById("yourTitle");
+        let text;
+        text = data.titles;
         
-        for (const key in data) {
-            
-           let h1 = document.getElementById("yourTitle");
-           let text = data[key];
- 
-
-           text.forEach(function(item, i) {
-                setInterval(function() {
-                    if(i === 0){
-                        setTimeout(function(){
-                            h1.append(' ',item);     
-                        },0)                                               
-                    }
-                    if(i === 1){                        
-                       setTimeout(function(){                          
-                            h1.append(' ',item);                 
-                        },1000) 
-                    }if(i === 2){
-                        setTimeout(function(){
-                            h1.append(' ',item);              
-                        },2000)
-                        setTimeout(function(){
-                            document.location.reload();             
-                        },3000)
-                    }                
-                }, 4000);
-            })                                     
-        }
+        setTimeout(function(){
+            h1.innerHTML = text[0];     
+        },0)                                               
+                        
+        setTimeout(function(){                          
+            h1.innerHTML = text[1];                 
+        },3000) 
+    
+        setTimeout(function(){
+            h1.innerHTML= text[2];              
+        },6000)
+        setTimeout(function(){
+            document.location.reload();             
+        },9000) 
         
     </script>
 </body>
